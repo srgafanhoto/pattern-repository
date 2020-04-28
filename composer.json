@@ -1,0 +1,20 @@
+{
+    "name": "srgafanhoto/pattern-repository",
+    "description": "Working method with repositories",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sr. Gafanhoto",
+            "email": "sr.gafanhoto@hotmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "srgafanhoto\\PatternRepository\\": "src/"
+        }
+    },
+    "autoload-dev": {
+    },
+}
