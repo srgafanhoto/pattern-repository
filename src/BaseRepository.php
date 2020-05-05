@@ -3,6 +3,7 @@
 namespace srgafanhoto\PatternRepository;
 
 use DB;
+use Illuminate\Support\Arr;
 use Illuminate\Database\Eloquent\Model;
 use \Illuminate\Database\Eloquent\Builder;
 use Illuminate\Container\Container as App;
@@ -338,7 +339,7 @@ abstract class BaseRepository
 
         foreach($fillables as $fillable) {
 
-            if(array_has($dataRequest, $fillable)) {
+            if(Arr:has($dataRequest, $fillable)) {
                 $register->$fillable = $request->get($fillable);
             }
 
