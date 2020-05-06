@@ -1,5 +1,25 @@
 # Repository Design Pattern for Laravel
 
+## Installation
+
+You can install the package via composer:
+
+```bash
+$ composer require srgafanhoto/pattern-repository
+```
+
+### Laravel 5.4 or 5.3
+
+Add the Service Provider to the providers array in **config/app.php**:
+
+`srgafanhoto\PatternRepository\RepositoryServiceProvider::class`
+
+ *This is required for publishing the configuration file:*
+
+### Publish configuration file
+
+ `php artisan vendor:publish --provider="srgafanhoto\\PatternRepository\\RepositoryServiceProvider"`
+
 ## Methods
 
 ### srgafanhoto\PatternRepository\BaseRepository

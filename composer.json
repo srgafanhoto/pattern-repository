@@ -28,6 +28,13 @@
     },
     "autoload-dev": {
     },
+	"extra": {
+        "laravel": {
+            "providers": [
+                "srgafanhoto\\PatternRepository\\RepositoryServiceProvider"
+            ]
+        }
+    },
 	"minimum-stability": "dev",
     "prefer-stable": true
 }
