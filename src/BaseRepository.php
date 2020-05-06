@@ -339,7 +339,7 @@ abstract class BaseRepository
 
         foreach($fillables as $fillable) {
 
-            if(Arr:has($dataRequest, $fillable)) {
+            if(Arr::has($dataRequest, $fillable)) {
                 $register->$fillable = $request->get($fillable);
             }
 
