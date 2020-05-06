@@ -1,6 +1,12 @@
 {
     "name": "srgafanhoto/pattern-repository",
     "description": "Working method with repositories",
+	"keywords": [
+		"laravel",
+        "pattern",
+		"repository",
+		"pattern-repository"
+    ],
     "license": "MIT",
     "authors": [
         {
@@ -12,11 +18,16 @@
         "php": ">=7.2",
         "laravel/framework": "^6.0"
     },
+	"config": {
+		"sort-packages": true
+	},
     "autoload": {
         "psr-4": {
             "srgafanhoto\\PatternRepository\\": "src/"
         }
     },
     "autoload-dev": {
-    }
+    },
+	"minimum-stability": "dev",
+    "prefer-stable": true
 }
