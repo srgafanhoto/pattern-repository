@@ -3,6 +3,7 @@
 namespace srgafanhoto\PatternRepository\Blade;
 
 use Request;
+use Illuminate\Support\Str;
 
 class SortLink
 {
@@ -69,7 +70,7 @@ class SortLink
 
         $separator = '.';
 
-        if (str_contains($parameter, $separator)) {
+        if (Str::contains($parameter, $separator)) {
             $oneToOneSort = explode($separator, $parameter);
             return $oneToOneSort;
         }
