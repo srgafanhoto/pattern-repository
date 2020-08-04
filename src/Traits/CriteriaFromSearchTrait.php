@@ -393,7 +393,7 @@ trait CriteriaFromSearchTrait
         } elseif ($relation instanceof BelongsTo) {
 
             $relatedPrimaryKey = $relation->getQualifiedOwnerKeyName();
-            $parentPrimaryKey = $relation->getQualifiedForeignKey();
+            $parentPrimaryKey = $relation->getQualifiedForeignKeyName();
 
             return $this->formJoin($relatedTable, $parentPrimaryKey, $relatedPrimaryKey);
         } else {
