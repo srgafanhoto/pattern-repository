@@ -28,17 +28,20 @@ trait RedirectHelperTrait
     public function redirectStoredSuccess($routeIndex, $routeCreate, Request $request, $msg = '', $dataRoute = [])
     {
 
-        $route = (isset($request->adicionar_novo) ? $routeCreate : $routeIndex);
-        $dataRoute = (isset($request->adicionar_novo) ? [] : $dataRoute);
+        $saveType = $request->salvar ?: 'voltar_listagem';
+        $saveContinue = $saveType == 'continuar';
+        $route = $saveContinue ? $routeCreate : $routeIndex;
+        $dataRoute = $saveContinue ? $dataRoute : [];
 
         $msg = ( !empty($msg) ? $msg : trans('str.registroCadastradoSucesso') );
 
         return redirect(route($route, $dataRoute))->with([
+            'status' => $msg,
             'toastr' => [
                 'type' => 'success',
                 'msg'  => $msg
             ],
-            'status' => $msg
+
         ]);
 
     }
@@ -55,14 +58,18 @@ trait RedirectHelperTrait
     public function redirectUpdatedSuccess($routeIndex, $routeCreate, Request $request, $msg = null, $dataRoute = [])
     {
 
-        $route = (isset($request->adicionar_novo) ? $routeIndex : $routeCreate );
-        $dataRoute = (isset($request->adicionar_novo) ? [] : $dataRoute );
+        $saveType = $request->salvar ?: 'voltar_listagem';
+        $saveContinue = $saveType == 'continuar';
+        $route = $saveContinue ? $routeCreate : $routeIndex;
+        $dataRoute = $saveContinue ? $dataRoute : [];
+
+        $msg = ( !empty($msg) ? $msg : trans('str.registroEditadoSucesso') );
 
         return redirect(route($route, $dataRoute))->with([
-            'status' => $msg ?: trans('str.registroEditadoSucesso'),
+            'status' => $msg,
             'toastr' => [
                 'type' => 'success',
-                'msg'  => $msg ?: trans('str.registroEditadoSucesso')
+                'msg'  => $msg
             ]
         ]);
 
